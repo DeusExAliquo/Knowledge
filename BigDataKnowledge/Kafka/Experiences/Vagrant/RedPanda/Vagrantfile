@@ -69,6 +69,7 @@ Vagrant.configure(2) do |config|
 			cfg.vm.provision :shell, :inline => etcHosts
 			cfg.vm.provision :shell, :inline => common
 			if node[:type] == "kafka"
+				# Install kafka from the pre downloaded ../kafka/kafka_2.13-3.9.0.tgz
 				cfg.vm.provision "file", source: "../kafka/kafka_2.13-3.9.0.tgz", destination: "/home/vagrant/kafka_2.13-3.9.0.tgz"
             	cfg.vm.provision :shell, :path => "install_KRaft.sh", :args => [nodesnumber, index+1]
 			elsif node[:type] == "redpanda"

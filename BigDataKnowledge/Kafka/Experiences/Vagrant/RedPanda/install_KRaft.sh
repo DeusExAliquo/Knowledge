@@ -34,6 +34,7 @@ export KAFKA_VERSION="3.9.0"
 export VERSION=${SCALA_VERSION}-${KAFKA_VERSION}
 groupadd --system kafka
 useradd -s /sbin/nologin --system -g kafka kafka
+# Install kafka from the pre downloaded ../kafka/kafka_2.13-3.9.0.tgz
 # wget https://downloads.apache.org/kafka/${KAFKA_VERSION}/kafka_${VERSION}.tgz
 tar xzf kafka_${VERSION}.tgz
 mv kafka_${VERSION} /opt/kafka
